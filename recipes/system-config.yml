@@ -1,0 +1,15 @@
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  - type: script
+    scripts:
+      - name: set-fish-default
+        snippet: |
+          # Set fish as the default shell for all new users
+          sed -i 's|SHELL=/bin/bash|SHELL=/usr/bin/fish|' /etc/default/useradd
+          # Also set it as the system-wide default login shell
+          echo /usr/bin/fish >> /etc/shells
+          usermod -s /usr/bin/fish root

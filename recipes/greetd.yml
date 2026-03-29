@@ -1,0 +1,22 @@
+type: script
+scripts:
+  - name: setup-greetd
+    snippet: |
+      # Enable greetd as the login manager
+      systemctl enable greetd
+
+      # Configure tuigreet as the greeter
+      mkdir -p /etc/greetd
+      cat > /etc/greetd/config.toml << 'EOF'
+      [terminal]
+      vt = 1
+
+      [default_session]
+      command = "tuigreet --time --remember --cmd /usr/bin/tmux"
+      user = "greeter"
+
+      # Enable PipeWire
+      systemctl enable --global pipewire.service
+      systemctl enable --global pipewire-pulse.service
+      systemctl enable --global wireplumber.service
+      EOF
