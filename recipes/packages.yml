@@ -1,15 +1,12 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
 type: dnf
 repos:
   copr:
     - atim/starship
-    - atim/yazi
 install:
   packages:
     # Shell & prompt
     - starship
     - tmux
-    - zsh
     - fish
 
     # File manager
@@ -25,30 +22,32 @@ install:
     - inxi
 
     # Network TUI tools
-    - nmtui           # NetworkManager TUI
-    - irssi           # IRC
+    - NetworkManager-tui
+    - irssi
     - nmap
 
     # Misc utilities
-    - bat             # better cat
-    - eza             # better ls
-    - fd-find         # better find
-    - ripgrep         # better grep
-    - fzf             # fuzzy finder
-    - zoxide          # better cd
-    - tealdeer        # tldr pages
+    - bat
+    - eza
+    - fd-find
+    - ripgrep
+    - fzf
+    - zoxide
+    - tealdeer
     - jq
     - unzip
     - wget
     - curl
 
-    # Login manager (greetd + tuigreet)
-    - greetd
-    - greetd-tuigreet
+    # Audio TUI
+    - pulsemixer
 
     # Audio stack
     - pipewire
-    - pipewire-pulse        # PulseAudio compatibility layer
-    - pipewire-alsa         # ALSA compatibility
-    - wireplumber           # PipeWire session manager (required)
-    - pulsemixer            # TUI mixer (you already had this)
+    - pipewire-pulse
+    - pipewire-alsa
+    - wireplumber
+
+    # Login manager
+    - greetd
+    - greetd-tuigreet
