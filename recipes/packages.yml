@@ -2,15 +2,16 @@ type: dnf
 repos:
   copr:
     - atim/starship
+    - atim/eza
 install:
   packages:
     # Shell & prompt
     - starship
-    - tmux
     - fish
 
-    # File manager
-    - yazi
+    # File manager (install via cargo in script instead if this fails)
+    - yazi-fm
+    - yazi-cli
 
     # Text editors
     - micro
@@ -31,22 +32,11 @@ install:
     - eza
     - fd-find
     - ripgrep
-    - fzf
     - zoxide
     - tealdeer
-    - jq
-    - unzip
-    - wget
-    - curl
 
-    # Audio TUI
-    - pulsemixer
-
-    # Audio stack
-    - pipewire
-    - pipewire-pulse
-    - pipewire-alsa
-    - wireplumber
+    # Audio TUI (pulsemixer not packaged, use pamixer instead)
+    - pamixer
 
     # Login manager
     - greetd
