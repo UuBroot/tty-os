@@ -2,12 +2,12 @@ type: dnf
 repos:
   copr:
     - atim/starship
+    - lihaohong/yazi
 install:
   packages:
     - starship
     - fish
-    - yazi-fm
-    - yazi-cli
+    - yazi
     - micro
     - neovim
     - btop
