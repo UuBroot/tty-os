@@ -1,0 +1,33 @@
+name: Build ISO
+
+on:
+  workflow_dispatch: # manual trigger
+  release:
+    types: [created]
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build ISO
+        uses: jasonn3/build-container-installer@v1.4.0
+        id: build
+        with:
+          image_repo: ghcr.io/uubroot
+          image_name: tty-os
+          image_tag: latest
+          version: 42
+          iso_name: tty-os.iso
+
+      - name: Upload ISO to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: |
+            ${{ steps.build.outputs.iso_path }}
+            ${{ steps.build.outputs.iso_path }}.sha256
