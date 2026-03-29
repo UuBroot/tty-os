@@ -17,7 +17,7 @@ install:
     - irssi
     - nmap
     - bat
-    - eza
+    - lsd
     - fd-find
     - ripgrep
     - zoxide
