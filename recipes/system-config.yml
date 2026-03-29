@@ -6,4 +6,4 @@ modules:
 
   - type: script
     scripts:
-      - files/scripts/set-fish-default.sh
+      - set-fish-default.sh
