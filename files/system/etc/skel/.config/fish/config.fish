@@ -9,8 +9,8 @@ starship init fish | source
 zoxide init fish | source
 
 # Aliases
-alias ls='eza --icons'
-alias ll='eza --icons -la'
+alias ls='lsd --icon always'
+alias ll='lsd --icon always -la'
 alias cat='bat'
 
 alias open='yazi'        # file manager
