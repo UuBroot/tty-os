@@ -16,8 +16,12 @@ alias cat='bat'
 alias open='yazi'        # file manager
 alias top='btop'         # system monitor
 alias info='fastfetch'   # system info
-alias music='pulsemixer' # audio mixer
+alias music='pamixer --help && pamixer' # audio mixer
 alias network='nmtui'    # network manager
+
+alias vol='pamixer --get-volume'
+alias vol+='pamixer --increase 5'
+alias vol-='pamixer --decrease 5'
 
 # Welcome message
 function fish_greeting
