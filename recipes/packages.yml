@@ -2,42 +2,26 @@ type: dnf
 repos:
   copr:
     - atim/starship
-    - atim/eza
 install:
   packages:
-    # Shell & prompt
     - starship
     - fish
-
-    # File manager (install via cargo in script instead if this fails)
     - yazi-fm
     - yazi-cli
-
-    # Text editors
     - micro
     - neovim
-
-    # System monitor / info
     - btop
     - fastfetch
     - inxi
-
-    # Network TUI tools
     - NetworkManager-tui
     - irssi
     - nmap
-
-    # Misc utilities
     - bat
     - eza
     - fd-find
     - ripgrep
     - zoxide
     - tealdeer
-
-    # Audio TUI (pulsemixer not packaged, use pamixer instead)
     - pamixer
-
-    # Login manager
     - greetd
     - greetd-tuigreet
